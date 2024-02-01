@@ -16,11 +16,10 @@ const SignInForm = () => {
 
     // Navigate to the upload page
     navigate("/dashboard");
-    // console.log("dashborder")
   };
 
   return (
-    <div className="text-left p-10 font-semibold w-[400px] bg-white rounded-md">
+    <div className="text-left p-5 md:p-10 font-semibold md:w-[400px] bg-white rounded-md mx-auto mt-10">
       <form onSubmit={handleSignIn} className="flex flex-col space-y-5">
         <div>
           <label htmlFor="email">Email address</label>
@@ -29,7 +28,7 @@ const SignInForm = () => {
             type="email"
             id="email"
             required
-            className="rounded-md bg-gray-200 outline-none py-2 px-2 my-1 w-[100%] focus:bg-gray-300"
+            className="rounded-md bg-gray-200 outline-none py-2 px-2 my-1 w-full md:w-[100%] focus:bg-gray-300"
           />
         </div>
         <div>
@@ -38,13 +37,13 @@ const SignInForm = () => {
           <input
             type="password"
             id="password"
-            className="rounded-md bg-gray-200 outline-none py-2 px-2 my-1 w-[100%] focus:bg-gray-300"
+            className="rounded-md bg-gray-200 outline-none py-2 px-2 my-1 w-full md:w-[100%] focus:bg-gray-300"
           />
         </div>
 
         <p className="text-blue-500 hover:cursor-pointer">Forgot password?</p>
 
-        <div className="flex text-white ">
+        <div className="flex text-white">
           <button type="submit" className="flex-grow bg-[#605BFF]">
             Sign In
           </button>
