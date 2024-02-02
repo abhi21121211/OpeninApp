@@ -63,10 +63,14 @@ const AfterUpload = () => {
                   </td>
                   <td>
                     {selectedTags.map((tag) => (
-                      <span onClick={() => handleRemoveTag(tag)} key={tag} className="mr-2">
-                        {tag}<IoIosClose/>
+                      <span style={{ color:"wheat",padding:"3px", alignText:"center", borderRadius:"3px", background:"#605bff"}} onClick={() => handleRemoveTag(tag)} key={tag} className="mr-2">
+                        {tag} <span><IoIosClose style={{display:"inline", background:"#605bff"}}/></span>
                         
                       </span>
+                    //   <div style={{display:"flex", width:"30%", background:"#605bff"}} onClick={() => handleRemoveTag(tag)} key={tag} className="mr-2">
+                    //   {tag}<IoIosClose />
+                      
+                    // </div>
                     ))}
                   </td>
                 </tr>

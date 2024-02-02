@@ -41,7 +41,13 @@ function removeFile() {
         }, 2000)
     }
     else{
-      handleShowTable()
+      setLoading(true)
+      setTimeout(()=>{
+        setSubmit(true)
+        setLoading(false)
+        removeFile()
+        handleShowTable()
+    }, 2000)
         // alert("select file first")
     }
   };
