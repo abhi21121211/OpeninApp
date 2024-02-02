@@ -9,6 +9,7 @@ import leftSide from "../assets/LeftSide.png";
 import SignInForm from "../components/SignInForm";
 import googleSignIn from "../assets/GoogleSignIn.png";
 import appleSignIn from "../assets/AppleSignIn.png";
+import { GoogleLogin } from '@react-oauth/google';
 
 const SignInPage = () => {
   return (
@@ -39,10 +40,15 @@ const SignInPage = () => {
           <h1 className="font-bold text-2xl md:text-3xl">Sign In</h1>
           <p>Sign in to your account</p>
           <div className="flex my-2 gap-1">
-            <img
-              src={googleSignIn}
-              alt="Google Sign In"
-              className="border rounded cursor-pointer w-1/2"
+
+
+            <GoogleLogin
+              onSuccess={credentialResponse => {
+                console.log(credentialResponse);
+              }}
+              onError={() => {
+                console.log('Login Failed');
+              }}
             />
             <img
               src={appleSignIn}
