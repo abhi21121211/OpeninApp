@@ -41,16 +41,18 @@ const SignInPage = () => {
           <p>Sign in to your account</p>
           <div className="flex my-2 gap-1">
 
-
-            <GoogleLogin
+<button style={{background:"#ffff"}} onClick={()=>navigate("/dashboard")}>
+<GoogleLogin
               onSuccess={credentialResponse => {
                 console.log(credentialResponse);
-                navigate("/dashboard");
+                
               }}
               onError={() => {
                 console.log('Login Failed');
               }}
             />
+</button>
+            
             <img
               src={appleSignIn}
               alt="Apple Sign In"
