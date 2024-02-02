@@ -41,7 +41,8 @@ function removeFile() {
         }, 2000)
     }
     else{
-        alert("select file first")
+      handleShowTable()
+        // alert("select file first")
     }
   };
 

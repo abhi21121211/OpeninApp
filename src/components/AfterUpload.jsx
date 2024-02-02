@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+// import { RxCross1 } from "react-icons/rx";
+import { IoIosClose } from "react-icons/io";
 const AfterUpload = () => {
   const [tags, setTags] = useState(["Tag 1", "Tag 2", "Tag 3"]);
   const [selectedTags, setSelectedTags] = useState(["Tag 1"]);
@@ -63,7 +64,7 @@ const AfterUpload = () => {
                   <td>
                     {selectedTags.map((tag) => (
                       <span onClick={() => handleRemoveTag(tag)} key={tag} className="mr-2">
-                        {tag}
+                        {tag}<IoIosClose/>
                         
                       </span>
                     ))}

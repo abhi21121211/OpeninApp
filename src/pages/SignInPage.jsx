@@ -10,7 +10,7 @@ import SignInForm from "../components/SignInForm";
 import googleSignIn from "../assets/GoogleSignIn.png";
 import appleSignIn from "../assets/AppleSignIn.png";
 import { GoogleLogin } from '@react-oauth/google';
-
+import { useNavigate } from "react-router-dom";
 const SignInPage = () => {
   return (
     <div className="flex h-[100%] flex-wrap overflow-hidden">
@@ -45,6 +45,7 @@ const SignInPage = () => {
             <GoogleLogin
               onSuccess={credentialResponse => {
                 console.log(credentialResponse);
+                navigate("/dashboard");
               }}
               onError={() => {
                 console.log('Login Failed');
