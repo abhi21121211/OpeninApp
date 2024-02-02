@@ -11,7 +11,10 @@ import googleSignIn from "../assets/GoogleSignIn.png";
 import appleSignIn from "../assets/AppleSignIn.png";
 import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from "react-router-dom";
+
 const SignInPage = () => {
+  const navigate = useNavigate(); // Add this line to get the navigate function
+
   return (
     <div className="flex h-[100%] flex-wrap overflow-hidden">
       <div
@@ -40,19 +43,16 @@ const SignInPage = () => {
           <h1 className="font-bold text-2xl md:text-3xl">Sign In</h1>
           <p>Sign in to your account</p>
           <div className="flex my-2 gap-1">
-
-<button style={{background:"#ffff"}} onClick={()=>navigate("/dashboard")}>
-<GoogleLogin
-              onSuccess={credentialResponse => {
-                console.log(credentialResponse);
-                
-              }}
-              onError={() => {
-                console.log('Login Failed');
-              }}
-            />
-</button>
-            
+            <button style={{background:"#ffff"}} onClick={() => { navigate("/dashboard") }}>
+              <GoogleLogin
+                onSuccess={credentialResponse => {
+                  console.log(credentialResponse);
+                }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+              />
+            </button>
             <img
               src={appleSignIn}
               alt="Apple Sign In"
